@@ -42,7 +42,7 @@ func (namer *dateNamer) Name(info file.FileInfo) (string, error) {
 		namer.counters[key] = 1
 	}
 
-	return fmt.Sprintf("%s/%s-%04d%s", dir, info.GetTime().Format("2006-01-02"), c, ext), nil
+	return fmt.Sprintf("%s/%s-%03d%s", dir, info.GetTime().Format("2006-01-02"), c, ext), nil
 }
 
 func (namer *dateNamer) normalizeExtension(path string) (string, error) {
