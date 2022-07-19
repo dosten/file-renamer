@@ -48,8 +48,6 @@ func (guesser *exifTimeGuesser) Guess(path string) (time.Time, error) {
 		}
 
 		return time.Date(date.Year(), date.Month(), date.Day(), 0, 0, 0, 0, time.UTC), nil
-	case "video/mp4":
-		return time.Time{}, errors.New("not implemented")
 	}
 
 	return time.Time{}, errors.New("type not supported")
